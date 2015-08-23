@@ -1,5 +1,6 @@
 dependencies:
   override:
+    - gem install jekyll
     - sudo pip install awscli
 
 deployment:
