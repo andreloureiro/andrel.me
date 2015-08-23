@@ -1,0 +1,11 @@
+dependencies:
+  override:
+    - bundle install
+    - sudo pip install awscli
+
+deployment:
+  staging:
+    branch: master
+    commands:
+    - jekyll build
+    - /bin/bash publish.sh
