@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<section class="page container">
+  <div class="page__header">
+    <h1 class="header__title">Words</h1>  
+  </div>
+  <div class="page__content">
+    <div class="post-list">
+      <ul class="post-list__list">
+      {% for post in site.posts %}
+        <li class="list__item">
+          <span class="item__meta">{{ post.date | date: "%-d %b %Y" }}</span>
+          <h2 class="item__title">
+            <a class="title__link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h2>
+        </li>
+      {% endfor %}  
+      </ul>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,66 @@
+.header {
+	padding: 20px 0;
+	background-color: $brand-color;
+
+	.header-container {
+		flex: 1;
+
+		@include mq($tablet) {
+			display: flex;
+			flex-flow: row;
+		}
+
+		.header__site-title {
+			display: flex;
+			flex-grow: 1;
+			order: 1;
+			height: 400px;
+
+			@include mq($tablet) {
+				flex-grow: 2;
+				margin-left: 0;
+			}
+
+			.site-title__text {
+				margin: 0;
+				align-self: flex-end;
+				margin-left: 10px;
+				font-size: 6.399em;
+				color: white;
+				text-decoration: underline;
+			}
+		}
+
+		.header__nav {
+			flex: 1;
+			order: 2;
+			margin-left: 10px;
+			color: white;
+
+			@include mq($tablet) {
+				margin-left: 0;
+				text-align: right;
+			}
+
+			.nav__list {
+				margin: 0;
+				padding: 0;
+
+				.list__item {
+					display: inline-block;
+					vertical-align: middle;
+					list-style-type: none;
+
+					.item__link {
+						color: white;
+						text-decoration: none;
+
+						&:hover {
+							border-bottom: 2px solid white;
+						}
+					}
+				}
+			}
+		}
+	}
+}

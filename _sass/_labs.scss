@@ -1,0 +1,17 @@
+.labs {
+	display: flex;
+	flex-flow: row nowrap;
+  padding-top: 20px;
+}
+
+.labs__header {
+	flex: 1 20%;
+
+	.header__title {
+		color: $brand-color;
+	}
+}
+
+.labs__content {
+	flex: 1 80%;
+}

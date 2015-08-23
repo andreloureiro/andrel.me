@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<section class="container container--column">
+	<div class="post">
+		<header class="post__header">
+			<p class="header__meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+		</header>
+
+		<article class="post__content">
+			<h1 class="content__title">{{ page.title }}</h1>
+			{{ content }}
+		</article>
+	</div>
+</section>

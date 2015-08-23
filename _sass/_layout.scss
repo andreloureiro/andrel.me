@@ -1,0 +1,26 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+	display: flex;
+  width: 100%;
+
+  @include mq($tablet) {
+    width: 40em;
+    margin: 0 auto;
+  }
+
+  @include mq($desktop) {
+    width: 50em;
+    margin: 0 auto;
+  }
+
+  &.container--column {
+  	flex-direction: column;
+  }
+}

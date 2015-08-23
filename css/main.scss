@@ -1,0 +1,71 @@
+---
+---
+@charset "utf-8";
+
+/*
+--------------------------------
+Author: Andre Loureiro
+Date:   26/08/2015
+URL:    http://www.modularscale.com/?18,44,120&px&1.618&web&table
+--------------------------------
+*/
+
+// Variables
+$heading-font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+$base-font-family: 		'Domine', sans-serif;
+$base-font-size:   		18px;
+$small-font-size:  		$base-font-size * 0.875;
+$base-line-height: 		1.5;
+
+$spacing-unit:     		30px;
+
+$text-color:       		#333;
+$background-color: 		#fdfdfd;
+$brand-color:      		#F44336;
+
+$grey-color:       		#828282;
+$grey-color-light: 		lighten($grey-color, 40%);
+$grey-color-dark:  		darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    		800px;
+
+$on-palm:          		600px;
+$on-laptop:        		800px;
+
+
+
+// Using media queries with like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+$tablet: 48em;
+$desktop: 64em;
+@mixin mq($device) {
+  @media screen and (min-width: $device) {
+    @content
+  }
+}
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "layout",
+        "syntax-highlighting",
+        "typography",
+        "header",
+        "home",
+        "post-list",
+        "post",
+        "page",
+        "labs"
+;
