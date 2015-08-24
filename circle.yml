@@ -1,13 +1,18 @@
 dependencies:
   override:
     - gem install jekyll
+    - gem install html-proofer
     - sudo pip install awscli
     - npm install
+    - jekyll build
+    - /bin/bash optimize.sh
+
+test:
+  override:
+    - htmlproof ./_site
 
 deployment:
   staging:
     branch: master
     commands:
-    - jekyll build
-    - /bin/bash optimize.sh
     - /bin/bash publish.sh
