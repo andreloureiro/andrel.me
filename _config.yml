@@ -5,6 +5,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Front End Developer
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://andrel.me" # the base hostname & protocol for your site
+cdn_url: "http://dnbi5qpsl69uk.cloudfront.net"
 twitter_username: spigones
 github_username:  andreloureiro
 
