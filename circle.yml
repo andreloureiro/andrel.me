@@ -2,10 +2,12 @@ dependencies:
   override:
     - gem install jekyll
     - sudo pip install awscli
+    - npm install
 
 deployment:
   staging:
     branch: master
     commands:
     - jekyll build
+    - /bin/bash optimize.sh
     - /bin/bash publish.sh

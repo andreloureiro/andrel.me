@@ -1,0 +1,20 @@
+{
+  "name": "andrel.me",
+  "version": "1.0.0",
+  "description": "Personal site",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreloureiro/andrel.me.git"
+  },
+  "author": "Andre Loureiro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreloureiro/andrel.me/issues"
+  },
+  "homepage": "https://github.com/andreloureiro/andrel.me#readme",
+  "dependencies": {
+    "clean-css": "^3.3.9",
+    "imagemin-cli": "^1.0.0"
+  }
+}
