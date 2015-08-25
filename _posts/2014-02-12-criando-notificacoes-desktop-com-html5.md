@@ -83,7 +83,7 @@ Instanciamos uma nova notificação da seguinte forma:
 var notification = new Notification(titulo, propriedades)
 {% endhighlight %}
 
-O primeiro parâmetro é o título da notificação. No segundo você pode configurar algumas propriedades, e você tem acesso a todas elas na [documentação no MDN](). As mais importantes para nós neste momento são:
+O primeiro parâmetro é o título da notificação. No segundo você pode configurar algumas propriedades, e você tem acesso a todas elas na [documentação no MDN](https://developer.mozilla.org/en/docs/Web/API/notification). As mais importantes para nós neste momento são:
 
 - `body` : O texto que irá;
 - `icon` : O ícone que poderá ser apresentado na notificação.

@@ -10,7 +10,7 @@ class: blog
 
 ---
 
-Uma API do HTML5 que vem recebendo bastante atenção é a [AppCache](), que permite forçar com que o browser faça o download e armazene os arquivos que quisermos no cache do navegador.
+Uma API do HTML5 que vem recebendo bastante atenção é a [AppCache](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Using_the_application_cache), que permite forçar com que o browser faça o download e armazene os arquivos que quisermos no cache do navegador.
 
 O resultado é a otimização na economia de requests na próxima vez que o usuário precisar desse arquivo. Mas isso não quer dizer que você deve colocar o site inteiro no cache do browser, e sim o que for apenas necessário.
 
@@ -30,7 +30,7 @@ Então decidimos que a aplicação seria preparada para funcionar completamente 
 
 Eu já sabia da existência da AppCache, mas ainda não havia usado, e então mergulhei no assunto. A API é muito completa e através dos seus eventos, temos acesso a vários estágios do processo de download. Nesse post, não vou abordar todos os eventos, mas no fim do post tem alguns links com bastante material bacana sobre a AppCache.
 
-Depois de estudar as possibilidades da API, comecei a definir a interação que poderia oferecer ao usuário. Defini que iria desenvolver a aplicação em [AngularJS]() e como tinha bastante trabalho pela frente no aplicativo em si, e como quem daria suporte ao cliente no evento seria a sua equipe de TI, preparei interações bem simples.
+Depois de estudar as possibilidades da API, comecei a definir a interação que poderia oferecer ao usuário. Defini que iria desenvolver a aplicação em [AngularJS](https://angularjs.org/) e como tinha bastante trabalho pela frente no aplicativo em si, e como quem daria suporte ao cliente no evento seria a sua equipe de TI, preparei interações bem simples.
 
 ## Suporte nos browsers atuais
 
