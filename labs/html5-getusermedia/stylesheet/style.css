@@ -1,0 +1,56 @@
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: black;
+}
+
+.options {
+	display: block;
+	width: 100%;
+	padding: 0;
+	text-align: center;
+}
+
+.options li {
+	display: block;
+	margin: 1rem 0.6rem 0 0.6rem;
+}
+
+a {
+	display: block;
+	color: white;
+	font-weight: 100;
+	font-size: 16px;
+	text-decoration: none;
+	padding: 6px 12px;
+	border-radius: 3px;
+	background: #ff2f00;
+	font-family: arial;
+	border-bottom: 4px solid #ae0c04;
+}
+
+video {
+	margin: 1em 4%;
+	width: 92%;
+}
+
+@media screen and (min-width: 48rem) {
+
+	.options li {
+		display: inline-block;
+		width: 30%;
+		vertical-align: top;
+	}
+
+	video {
+		margin: 1em 3%;
+		width: 94%;
+	}
+
+}
+

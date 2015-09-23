@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>getUserMedia API</title>
+	<meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1'>
+	<link rel="stylesheet" href="stylesheet/style.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+</head>
+<body>
+
+	<ul class="options">
+		<li>
+			<a href="javascript:;" onclick="getMedia(true, true)">
+				<i class="fa fa-video-camera"></i> AUDIO AND VIDEO
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;" onclick="getMedia(true, false)">
+				 <i class="fa fa-microphone"></i> ONLY AUDIO
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;" onclick="getMedia(false, true)">
+				<i class="fa fa-camera"></i> ONLY VIDEO
+			</a>
+		</li>
+	</ul>
+
+	<video autoplay controls></video>
+
+	<script src="javascript/script.js"></script>
+	
+</body>
+</html>
