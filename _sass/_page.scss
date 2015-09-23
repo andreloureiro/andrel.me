@@ -1,25 +1,25 @@
 .page {
-	display: flex;
-	flex-flow: column nowrap;
+  display: flex;
+  flex-flow: column nowrap;
   padding-top: 20px;
 
   @include mq($tablet) {
-		flex-flow: row nowrap;
+    flex-flow: row nowrap;
   }
 }
 
 .page__header {
-	flex: 1;
+  flex: 1;
 
-	.header__title {
-		color: $brand-color;
-	}
+  .header__title {
+    color: $brand-color;
+  }
 }
 
 .page__content {
-	flex: 1;
+  flex: 1;
 
-	@include mq($tablet) {
-		flex: 3;
-	}
+  @include mq($tablet) {
+    flex: 3;
+  }
 }

@@ -1,1 +1,1 @@
-aws s3 sync _site s3://andrel.me --region sa-east-1
+aws s3 sync _site s3://andreloureiro.net --region sa-east-1

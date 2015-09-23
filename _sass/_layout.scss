@@ -1,5 +1,5 @@
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-	display: flex;
+  display: flex;
   width: 100%;
 
   @include mq($tablet) {
@@ -21,6 +21,6 @@ body {
   }
 
   &.container--column {
-  	flex-direction: column;
+    flex-direction: column;
   }
 }

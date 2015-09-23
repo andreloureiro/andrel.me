@@ -21,7 +21,7 @@ $spacing-unit:     		30px;
 
 $text-color:       		#333;
 $background-color: 		#fdfdfd;
-$brand-color:      		#F44336;
+$brand-color:      		#5cbfeb;
 
 $grey-color:       		#828282;
 $grey-color-light: 		lighten($grey-color, 40%);
@@ -54,6 +54,11 @@ $desktop: 64em;
   @media screen and (min-width: $device) {
     @content
   }
+}
+
+// Responsive images
+img {
+  max-width: 100%;
 }
 
 
