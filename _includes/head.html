@@ -6,6 +6,31 @@
   <title>{% if page.title %}Andre Loureiro - {{ page.title }}{% else %}Andre Loureiro{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
+  <!-- Social: Facebook / Open Graph -->
+  <meta property="fb:admins" content="id do seu fb insight">
+  <meta property="og:url" content="http://andreloureiro.net">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{page.title}}">
+  <!-- <meta property="og:image" content="imagem do site (LINK ABSOLUTO)"> -->
+  <!-- <meta property="og:description" content="Front End Developer"> -->
+  <meta property="og:site_name" content="Andre Loureiro">
+  <meta property="article:author" content="https://www.facebook.com/andreloureiroo">
+  <meta property="article:publisher" content="https://www.facebook.com/andreloureiroo">
+  <meta property="article:published_time" content="{{page.date}}">
+
+  <!-- Social: Twitter -->
+  <meta name="twitter:card" content="summary"> <!-- aqui fica o tipo de card -->
+  <meta name="twitter:site" content="@spigones"> <!-- twitter handler do site -->
+  <meta name="twitter:title" content="{{page.title}}">
+  <meta name="twitter:description" content="Front End Developer">
+  <!-- <meta property="twitter:image:src" content="link da imagem"> -->
+
+  <link rel="author" href="https://plus.google.com/u/0/+AndreLoureiroo">
+  <!-- Social: Google+ / Schema.org  -->
+  <meta itemprop="name" content="{{page.title}}">
+  <meta itemprop="description" content="Front End Developer">
+  <!-- <meta itemprop="image" content="imagem da página"> -->
+
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
