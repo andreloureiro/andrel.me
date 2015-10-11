@@ -7,8 +7,8 @@
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
   <!-- Social: Facebook / Open Graph -->
-  <meta property="fb:admins" content="id do seu fb insight">
-  <meta property="og:url" content="http://andreloureiro.net">
+  <!-- <meta property="fb:admins" content="id do seu fb insight"> -->
+  <meta property="og:url" content="{{ page.url | prepend: site.url }}">
   <meta property="og:type" content="article">
   <meta property="og:title" content="{{page.title}}">
   <!-- <meta property="og:image" content="imagem do site (LINK ABSOLUTO)"> -->
