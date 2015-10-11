@@ -8,7 +8,7 @@ url: "http://andreloureiro.net" # the base hostname & protocol for your site
 cdn_url: "http://dnbi5qpsl69uk.cloudfront.net"
 twitter_username: spigones
 github_username:  andreloureiro
-permalink: /:title.html
+permalink: /:title
 
 # Build settings
 markdown: kramdown
