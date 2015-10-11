@@ -7,10 +7,6 @@ dependencies:
     - jekyll build
     - /bin/bash optimize.sh
 
-test:
-  override:
-    - htmlproof ./_site
-
 deployment:
   staging:
     branch: master
