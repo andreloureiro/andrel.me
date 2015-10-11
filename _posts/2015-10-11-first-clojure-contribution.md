@@ -8,6 +8,7 @@ category: clojure
 keywords: clojure contribution clojuredocs andre loureiro
 published: true
 class: blog
+excerpt: I started learning Clojure 3 months ago. I'm in love with the language...
 
 ---
 I started learning Clojure 3 months ago. I'm in love with the language!
