@@ -13,9 +13,11 @@ excerpt: Service Worker provides a simple way to make webapps work offline
 ---
 If you read the title and it's a new thing for you, let me provide you a simple explanation about it.
 
-[Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers) came to solve the need of a better aproach to handle the problem with connectivity in web apps. We know that we can do it with [AppCache](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers), by the way I already worked on an [offline application](http://andreloureiro.net/usando-html5-appcache-para-web-e-aplicacoes-offline/) (pt-BR) for an international car manufacturer, but that was a pain to develop.
+[Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers) came to solve the need of a better approach to handle the problem with connectivity in web apps. We know that we can do it with [AppCache](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers), by the way I already worked on an [offline application](http://andreloureiro.net/usando-html5-appcache-para-web-e-aplicacoes-offline/) (pt-BR) for an international car manufacturer, but that was a pain to develop.
 
 With Service Workers we have more control over the process. Also, we can use JavaScript to configure our SW.
+
+Before we start, is important to say that Service Workers work only over `HTTPS` or in `localhost` for dev stuff.
 
 ## Go Service Worker!
 
@@ -47,7 +49,7 @@ The first parameter of the `register` method is the path to the Service Worker s
 
 ## Installation
 
-First of all, I'll create an array of paths to the files I want Service Worker to cache and serve offline.
+First of all, we'll create an array of paths to the files we want Service Worker to cache and serve offline.
 
 {% highlight javascript %}
 var assetsToCache = [
