@@ -6,7 +6,6 @@ dependencies:
     - gem install jekyll
     - sudo pip install awscli
     - npm install
-    - rm -rf _site
     - jekyll build
     - /bin/bash optimize.sh
 
