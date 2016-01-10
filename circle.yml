@@ -4,7 +4,6 @@ machine:
 dependencies:
   override:
     - gem install jekyll
-    - gem install html-proofer
     - sudo pip install awscli
     - npm install
     - jekyll build
