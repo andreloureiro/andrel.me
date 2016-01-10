@@ -8,6 +8,7 @@ category: angular
 keywords: angular optimization production debug info debugEnabled front-end client html5 css3 javascript js andre loureiro
 published: true
 class: blog
+excerpt: .
 
 ---
 

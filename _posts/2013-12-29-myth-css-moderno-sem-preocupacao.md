@@ -8,6 +8,7 @@ category: css
 keywords: desenvolvimento front-end client html5 css3 javascript js andre loureiro andrel anlo anlo_ rwd design responsivo nodejs node myth variavel variaveis calc mobile
 published: true
 class: blog
+excerpt: .
 
 ---
 

@@ -7,6 +7,7 @@ category: html5
 tags: html5 api notification
 published: true
 class: blog
+excerpt: .
 
 ---
 

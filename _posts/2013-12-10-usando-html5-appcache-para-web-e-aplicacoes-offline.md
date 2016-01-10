@@ -6,15 +6,15 @@ featured_image: '/images/posts/html5-appcache.jpg'
 date: 2013-12-12 18:12
 category: html5
 keywords: desenvolvimento front-end client html5 css3 javascript js andre loureiro andrel anlo anlo_ rwd design responsivo HTML5 API offline AppCache mobile cache manifest
+published: true
 class: blog
+excerpt: .
 
 ---
 
 Uma API do HTML5 que vem recebendo bastante atenção é a [AppCache](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Using_the_application_cache), que permite forçar com que o browser faça o download e armazene os arquivos que quisermos no cache do navegador.
 
 O resultado é a otimização na economia de requests na próxima vez que o usuário precisar desse arquivo. Mas isso não quer dizer que você deve colocar o site inteiro no cache do browser, e sim o que for apenas necessário.
-
-<!--readmore-->
 
 ## Use com parcimônia
 
@@ -184,4 +184,3 @@ Esta é a versão completa do script.
 - [MDN - Using the application cache](https://developer.mozilla.org/en/docs/HTML/Using_the_application_cache)
 - [HTML5Rocks - A Beginner's Guide to Using the Application Cache](http://www.html5rocks.com/en/tutorials/appcache/beginner/)
 - [A List Apart - Application Cache is a Douchebag](http://alistapart.com/article/application-cache-is-a-douchebag)
-

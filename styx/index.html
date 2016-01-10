@@ -13,5 +13,26 @@
       <p>Loading...</p>
     </div>
     <script src="js/compiled/styx_next.js" type="text/javascript"></script>
+    <script>
+     (function() {
+       if ('serviceWorker' in navigator) {
+
+         // We have support! Now we'll try to register it.
+         // The registration method of Service Workers returns a Promise
+         navigator.serviceWorker.register('/styx/sw.js', {scope: '/styx/'})
+           .then(function(registration) {
+
+             // We're registered!
+             console.log('Service Worker registered.');
+             console.dir(registration);
+           })
+           .catch(function(err) {
+             
+             // Something went wrong
+             console.log('Service Worker registration failed.')
+           })
+       }
+     })()
+    </script>
   </body>
 </html>

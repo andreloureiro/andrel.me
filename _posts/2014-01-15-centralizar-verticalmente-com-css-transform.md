@@ -7,6 +7,7 @@ category: css
 published: true
 tags: css trick alinhamento vertical align css transform
 class: blog
+excerpt: .
 
 ---
 
