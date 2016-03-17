@@ -1,6 +1,5 @@
 .header {
 	padding: 20px 0;
-	background-color: $brand-color;
 
 	.header-container {
 		flex: 1;
@@ -26,7 +25,7 @@
 				align-self: flex-end;
 				margin-left: 10px;
 				font-size: 6.399em;
-				color: white;
+				color: #333;
 				text-decoration: underline;
 			}
 		}
@@ -35,7 +34,7 @@
 			flex: 1;
 			order: 2;
 			margin-left: 10px;
-			color: white;
+			color: #333;
 
 			@include mq($tablet) {
 				margin-left: 0;
@@ -52,11 +51,11 @@
 					list-style-type: none;
 
 					.item__link {
-						color: white;
+						color: #333;
 						text-decoration: none;
 
 						&:hover {
-							border-bottom: 2px solid white;
+							border-bottom: 2px solid #333;
 						}
 					}
 				}

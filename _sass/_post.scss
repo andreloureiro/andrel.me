@@ -10,6 +10,12 @@
 
 .post__header {
 	flex: 1;
+
+  .header__meta {
+    margin-bottom: 0;
+    font-size: 0.695em;
+    color: $secondary-text-color;
+  }
 }
 
 .post__content {
@@ -20,6 +26,19 @@
 	}
 
 	.content__title {
+    font-size: 1.8em;
 		color: $brand-color;
 	}
+
+  h2, h3, h4, h5, h6 {
+    margin-top: 2em;
+  }
+
+  li {
+    font-size: 0.9em;
+  }
+
+  img {
+    border: 1px solid #eee;
+  }
 }

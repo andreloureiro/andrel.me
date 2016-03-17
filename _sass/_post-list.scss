@@ -21,6 +21,7 @@
 
       .item__meta {
         font-size: 0.695em;
+        color: $secondary-text-color;
       }
       .item__image {
         width: 100%;
@@ -29,10 +30,11 @@
       }
       .item__title {
         margin: 0;
-        font-size: 1.511em;
+        font-size: 1.1em;
 
         .title__link {
           color: $brand-color;
+          text-decoration: none;
         }
       }
     }

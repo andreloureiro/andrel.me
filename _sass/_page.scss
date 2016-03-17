@@ -12,7 +12,10 @@
   flex: 1;
 
   .header__title {
+    display: inline-block;
+    font-size: 1.3em;
     color: $brand-color;
+    border-bottom: 2px solid #333;
   }
 }
 
