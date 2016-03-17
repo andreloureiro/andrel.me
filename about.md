@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-My name is Andre Loureiro and I'm a Frontend Developer, where I do some React.js, Angular and Node.
+My name is Andre Loureiro and I'm a Frontend Developer. My last experience was at [Apontador](http://apontador.com.br) where I did React.js, Angular and Node development.
 
 Actually I'm studying Functional Programming and I think this is improving myself as a developer. I'm also digging into Clojure and ClojureScript.
 
