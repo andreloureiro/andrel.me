@@ -1,24 +1,360 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html>
 
-<section class="page container">
-  <div class="page__header">
-    <h1 class="header__title">Words</h1>  
-  </div>
-  <div class="page__content">
-    <div class="post-list">
-      <ul class="post-list__list">
-      {% for post in site.posts %}
-        <li class="list__item">
-          <span class="item__meta">{{ post.date | date: "%-d %b %Y" }}</span>
-          <h2 class="item__title">
-            <a class="title__link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-          </h2>
-        </li>
-      {% endfor %}  
-      </ul>
-    </div>
-  </div>
-</section>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <title>Andre Loureiro</title>
+    <meta name="description" content="Front End Developer
+                                      ">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Social: Facebook / Open Graph -->
+    <!-- <meta property="fb:admins" content="id do seu fb insight"> -->
+    <meta property="og:url" content="http://andreloureiro.net/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="">
+    <!-- <meta property="og:image" content="imagem do site (LINK ABSOLUTO)"> -->
+    <meta property="og:description" content="">
+    <meta property="og:site_name" content="Andre Loureiro">
+    <meta property="article:author" content="https://www.facebook.com/andreloureiroo">
+    <meta property="article:publisher" content="https://www.facebook.com/andreloureiroo">
+    <meta property="article:published_time" content="">
+
+    <!-- Social: Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@anlo_">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <!-- <meta property="twitter:image:src" content="link da imagem"> -->
+
+    <link rel="author" href="https://plus.google.com/u/0/+AndreLoureiroo">
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <!-- <meta itemprop="image" content="imagem da página"> -->
+    <style type="text/css">
+     * {
+       box-sizing: border-box;
+     }
+
+     body {
+       margin: 0;
+     }
+
+     .container {
+       display: flex;
+       width: 100%;
+     }
+
+     @media screen and (min-width: 48em) {
+       .container {
+         width: 40em;
+         margin: 0 auto;
+       }
+     }
+
+     @media screen and (min-width: 64em) {
+       .container {
+         width: 50em;
+         margin: 0 auto;
+       }
+     }
+
+     html {
+       font-size: 18px;
+     }
+
+     body {
+       background-color: white;
+       font-family: "Domine", sans-serif;
+       font-weight: 400;
+       line-height: 1.45;
+       color: #333;
+     }
+
+     p {
+       margin-bottom: 1.3em;
+       font-size: .9em;
+       line-height: 1.6em;
+     }
+
+     h1,
+     h2 {
+       font-family: "Montserrat", Helvetica, Arial, sans-serif;
+       font-weight: inherit;
+       line-height: 1.2;
+       text-rendering: optimizeLegibility;
+     }
+
+     h1 {
+       margin-top: 0;
+       font-size: 2.444em;
+     }
+
+     h2 {
+       font-size: 1.4em;
+     }
+
+     a {
+       color: #333;
+     }
+
+     .page .page__header {
+       padding-left: 10px;
+     }
+
+     @media screen and (min-width: 48em) {
+       .page .page__header {
+         padding-left: 0;
+       }
+     }
+
+     .header {
+       padding: 20px 0;
+     }
+
+     .header .header-container {
+       flex: 1;
+     }
+
+     @media screen and (min-width: 48em) {
+       .header .header-container {
+         display: flex;
+         flex-flow: row;
+       }
+     }
+
+     .header .header-container .header__site-title {
+       display: flex;
+       flex-grow: 1;
+       order: 1;
+       height: 400px;
+     }
+
+     @media screen and (min-width: 48em) {
+       .header .header-container .header__site-title {
+         flex-grow: 2;
+         margin-left: 0;
+       }
+     }
+
+     .header .header-container .header__site-title .site-title__text {
+       margin: 0;
+       align-self: flex-end;
+       margin-left: 10px;
+       font-size: 6.399em;
+       color: #333;
+       text-decoration: underline;
+     }
+
+     .header .header-container .header__nav {
+       flex: 1;
+       order: 2;
+       margin-left: 10px;
+       color: #333;
+     }
+
+     @media screen and (min-width: 48em) {
+       .header .header-container .header__nav {
+         margin-left: 0;
+         text-align: right;
+       }
+     }
+
+     .header .header-container .header__nav .nav__list {
+       margin: 0;
+       padding: 0;
+     }
+
+     .header .header-container .header__nav .nav__list .list__item {
+       display: inline-block;
+       vertical-align: middle;
+       list-style-type: none;
+     }
+
+     .header .header-container .header__nav .nav__list .list__item .item__link {
+       color: #333;
+       text-decoration: none;
+     }
+
+     .post-list {
+       display: flex;
+     }
+
+     .post-list .post-list__list {
+       display: flex;
+       flex-direction: column;
+       margin: 0;
+       padding-left: 10px;
+       padding-right: 10px;
+     }
+
+     @media screen and (min-width: 48em) {
+       .post-list .post-list__list {
+         padding: 0;
+       }
+     }
+
+     .post-list .post-list__list .list__item {
+       display: flex;
+       flex-direction: column;
+       flex-grow: 1;
+       margin-bottom: 2.444em;
+       list-style-type: none;
+     }
+
+     .post-list .post-list__list .list__item .item__meta {
+       font-size: 0.695em;
+       color: #aaa;
+     }
+
+     .post-list .post-list__list .list__item .item__title {
+       margin: 0;
+       font-size: 1.1em;
+     }
+
+     .post-list .post-list__list .list__item .item__title .title__link {
+       color: #333;
+       text-decoration: none;
+     }
+
+     .page {
+       display: flex;
+       flex-flow: column nowrap;
+       padding-top: 20px;
+     }
+
+     @media screen and (min-width: 48em) {
+       .page {
+         flex-flow: row nowrap;
+       }
+     }
+
+     .page__header {
+       flex: 1;
+     }
+
+     .page__header .header__title {
+       display: inline-block;
+       margin-bottom: 2em;
+       font-size: 1.3em;
+       color: #333;
+       border-bottom: 2px solid #333;
+     }
+
+     .page__content {
+       flex: 1;
+     }
+
+     @media screen and (min-width: 48em) {
+       .page__content {
+         flex: 3;
+       }
+     }
+
+    </style>
+    <script id="loadcss">
+     (function(u,s){!function(e){"use strict";var n=function(n,t,o){var l,r=e.document,i=r.createElement("link");if(t)l=t;else{var a=(r.body||r.getElementsByTagName("head")[0]).childNodes;l=a[a.length-1]}var d=r.styleSheets;i.rel="stylesheet",i.href=n,i.media="only x",l.parentNode.insertBefore(i,t?l:l.nextSibling);var f=function(e){for(var n=i.href,t=d.length;t--;)if(d[t].href===n)return e();setTimeout(function(){f(e)})};return i.onloadcssdefined=f,f(function(){i.media=o||"all"}),i};"undefined"!=typeof module?module.exports=n:e.loadCSS=n}("undefined"!=typeof global?global:this);for(var i in u){loadCSS(u[i],s);}}(['/css/main.css','//fonts.googleapis.com/css?family=Montserrat:400,700','//fonts.googleapis.com/css?family=Domine:400,700'],document.getElementById("loadcss")));
+    </script>
+    <noscript>
+      <link rel="stylesheet" href="/css/main.css">
+      <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+      <link href="//fonts.googleapis.com/css?family=Domine:400,700" rel="stylesheet" type="text/css">
+    </noscript>
+    <link rel="canonical" href="http://andreloureiro.net/">
+    <link rel="alternate" type="application/rss+xml" title="al" href="http://andreloureiro.net/feed.xml">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-container">
+          <div class="header__site-title">
+            <p class="site-title__text">al</p>
+          </div>
+          <nav class="header__nav">
+            <ul class="nav__list">
+              <li class="list__item">
+                <a class="item__link" href="/">Words</a>
+              </li>
+              <li class="list__item">
+                / <a class="item__link" href="/about/">About</a>
+              </li>
+              <li class="list__item">
+                / <a class="item__link" href="/labs/">Labs</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <section class="page container">
+      <div class="page__header">
+        <h1 class="header__title">Words</h1>
+      </div>
+      <div class="page__content">
+        <div class="post-list">
+          <ul class="post-list__list">
+            <li class="list__item">
+              <span class="item__meta">9 Jan 2016</span>
+              <h2 class="item__title">
+                <a class="title__link" href="/a-basic-service-worker-implementation/">A basic Service Worker implementation</a>
+              </h2>
+            </li>
+            <li class="list__item">
+              <span class="item__meta">11 Oct 2015</span>
+              <h2 class="item__title">
+                <a class="title__link" href="/first-clojure-contribution/">First Clojure contribution</a>
+              </h2>
+            </li>
+            <li class="list__item">
+              <span class="item__meta">21 Sep 2015</span>
+              <h2 class="item__title">
+                <a class="title__link" href="/angular-disable-debug-info-in-production/">Disable debug info in production on Angular 1.3+</a>
+              </h2>
+            </li>
+            <li class="list__item">
+              <span class="item__meta">12 Feb 2014</span>
+              <h2 class="item__title">
+                <a class="title__link" href="/criando-notificacoes-desktop-com-html5/">Criando notificações desktop com HTML5</a>
+              </h2>
+            </li>
+            <li class="list__item">
+              <span class="item__meta">15 Jan 2014</span>
+              <h2 class="item__title">
+                <a class="title__link" href="/centralizar-verticalmente-com-css-transform/">Centralizar verticalmente com CSS Transform</a>
+              </h2>
+            </li>
+            <li class="list__item">
+              <span class="item__meta">29 Dec 2013</span>
+              <h2 class="item__title">
+                <a class="title__link" href="/myth-css-moderno-sem-preocupacao/">Myth - CSS moderno sem preocupação</a>
+              </h2>
+            </li>
+            <li class="list__item">
+              <span class="item__meta">14 Dec 2013</span>
+              <h2 class="item__title">
+                <a class="title__link" href="/html5-getusermedia-demo/">API HTML5 getUserMedia</a>
+              </h2>
+            </li>
+            <li class="list__item">
+              <span class="item__meta">12 Dec 2013</span>
+              <h2 class="item__title">
+                <a class="title__link" href="/usando-html5-appcache-para-web-e-aplicacoes-offline/">Usando HTML5 AppCache para Web e aplicações offline</a>
+              </h2>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+     ga('create', 'UA-67976633-1', 'auto');
+     ga('send', 'pageview');
+    </script>
+  </body>
+</html>
