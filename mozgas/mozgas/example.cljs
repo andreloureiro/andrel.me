@@ -38,6 +38,7 @@
    "perspectiveLeft"
    "perspectiveRight"])
 
+
 (defn toggle-box []
   (let [visible? (r/atom true)
         transition (r/atom "fade")
@@ -57,34 +58,38 @@
          :on-change #(reset! duration (.. % -target -value))}]
        [:div.toggle-box {:on-click #(reset! visible? (not @visible?))}
         [m/motion-component
-         {:duration @duration
+         {:key @transition
+          :duration @duration
+          :stagger @duration
           :animation (if @visible?
                        (str "transition." @transition "In")
                        (str "transition." @transition "Out"))}
-         [:div {:style {:width 100
-                        :height 100
+         [:div {:style {:width "100%"
+                        :height "100%"
                         :background-color "indigo"}}]]]])))
 
 
 ;; Square List
 
 (defn square [item]
-  [:div {:key item
-         :style {:width 100
-                 :height 100
-                 :margin "0.2rem"
-                 :background-color "orange"}}])
+  [:div.square-list__item
+   {:key item}])
 
 (def squares (r/atom []))
 
-(defn render-square-list []
+(defn render-square-list [transition]
   (fn []
-    [:div
+    [:div {:style {:text-align "center"}}
+     [:label "Transition"][:br]
+     [:select.toggle-transition
+      {:on-change #(reset! transition
+                           (.. % -target -value))}
+      (for [t transition-list]
+        ^{:key t}[:option {:value t} t])]
      [m/motion-group
-      {:enter {:animation "transition.shrinkIn"}
-       :leave {:animation "transition.expandOut"}
-       :style {:display "flex"
-               :flex-wrap "wrap"}}
+      {:class-name "square-list"
+       :enter {:animation (str "transition." @transition "In")}
+       :leave {:animation (str "transition." @transition "Out")}}
       (map square @squares)]]))
 
 (defn on-mount-square-list []
@@ -94,9 +99,10 @@
     (recur)))
 
 (defn square-list []
-  (r/create-class
-   {:component-did-mount on-mount-square-list
-    :reagent-render render-square-list}))
+  (let [transition (r/atom "bounceUp")]
+    (r/create-class
+     {:component-did-mount on-mount-square-list
+      :reagent-render (render-square-list transition)})))
 
 ;; Custom transition
 
@@ -141,61 +147,117 @@
 
 
 (def soccer-teams
-  ["Sao Paulo"
-   "Santos"
-   "Corinthians"
-   "Palmeiras"
-   "Internacional"
-   "Gremio"
-   "Avai"
-   "Figueirense"
-   "Atletico PR"
-   "Coritiba"
-   "Parana Clube"
-   "Botafogo"
-   "Flamengo"
-   "Fluminense"
-   "Vasco"
-   "Atletico MG"
-   "Cruzeiro"
-   "Bahia"
-   "Vitoria"
-   "Ceara"
-   "Santa Cruz"
-   "Remo"])
+  [{:name "Sao Paulo"
+    :fg "white"
+    :bg "red"}
+   {:name "Santos"
+    :fg "black"
+    :bg "white"}
+   {:name "Corinthians"
+    :fg "white"
+    :bg "black"}
+   {:name "Palmeiras"
+    :fg "white"
+    :bg "forestgreen"}
+   {:name "Internacional"
+    :fg "white"
+    :bg "red"}
+   {:name "Gremio"
+    :fg "white"
+    :bg "dodgerblue"}
+   {:name "Avai"
+    :fg "royalblue"
+    :bg "white"}
+   {:name "Figueirense"
+    :fg "white"
+    :bg "black"}
+   {:name "Atletico PR"
+    :fg "red"
+    :bg "black"}
+   {:name "Coritiba"
+    :fg "green"
+    :bg "white"}
+   {:name "Parana Clube"
+    :fg "red"
+    :bg "blue"}
+   {:name "Botafogo"
+    :fg "gray"
+    :bg "black"}
+   {:name "Flamengo"
+    :fg "black"
+    :bg "red"}
+   {:name "Fluminense"
+    :fg "green"
+    :bg "red"}
+   {:name "Vasco"
+    :fg "black"
+    :bg "white"}
+   {:name "Atletico MG"
+    :fg "white"
+    :bg "black"}
+   {:name "Cruzeiro"
+    :fg "white"
+    :bg "blue"}
+   {:name "Bahia"
+    :fg "blue"
+    :bg "red"}
+   {:name "Vitoria"
+    :fg "red"
+    :bg "black"}
+   {:name "Ceara"
+    :fg "white"
+    :bg "black"}
+   {:name "Santa Cruz"
+    :fg "black"
+    :bg "red"}
+   {:name "Remo"
+    :fg "white"
+    :bg "midnightblue"}])
 
 (def team-animation
   {:in (m/register-effect
-        {:calls [[{:transformPerspective [800 800]
-                   :transformOriginX ["50%" "50%"]
-                   :transformOriginY ["100%" "100%"]
-                   :marginBottom 0
+        {:calls [[{:transform-perspective [800 800]
+                   :transform-origin-x ["50%" "50%"]
+                   :transform-origin-y ["100%" "100%"]
+                   :margin-bottom 0
                    :opacity 1
-                   :rotateX [0 130]}
+                   :rotate-x [0 130]}
                   1
                   {:easing "ease-out"
                    :display "block"}]]})
    :out (m/register-effect
-        {:calls [[{
-                   :transformPerspective [800 800]
-                   :transformOriginX ["50%" "50%"]
-                   :transformOriginY ["0%" "0%"]
-                   :marginBottom -30
+        {:calls [[{:transform-perspective [800 800]
+                   :transform-origin-x ["50%" "50%"]
+                   :transform-origin-y ["0%" "0%"]
+                   :margin-bottom -30
                    :opacity 0
-                   :rotateX -70
-                   }
+                   :rotate-x -70}
                   1
                   {:easing "ease-out"
-                   :display "block"
-                   }]]})})
-
+                   :display "block"}]]})})
 
 (defn team [team]
-  [:li.list__item {:key (:id team) } (:team team)])
+  [:li.list__item {:key (:id team)
+                   :style {:background-color (:bg team)
+                           :color (:fg team)}} (:name team)])
 
 (defn add-item [teams item-count]
   (swap! item-count inc)
-  (swap! teams #(into [] (cons {:id @item-count :team (rand-nth soccer-teams)} %))))
+  (swap! teams #(into [] (cons (assoc (rand-nth soccer-teams) :id @item-count) %))))
+
+(defn enter-animation [duration]
+  {:animation (:in team-animation)
+   :stagger duration
+   :duration duration
+   :backwards true
+   :display "block"
+   :style {:display "none"}})
+
+(defn leave-animation [duration]
+  {:animation (:out team-animation)
+   :stagger duration
+   :duration duration
+   :backwards true})
 
 (defn custom-transition []
   (let [teams (r/atom [])
@@ -203,45 +265,70 @@
         duration 500]
     (fn []
       [:div.custom-transition
-       [:button {:on-click #(add-item teams item-count)} "add"]
-       [:button {:on-click #(dotimes [n 3] (add-item teams item-count))} "add 3"]
+       [:button.btn {:on-click #(add-item teams item-count)} "add"]
+       [:button.btn {:on-click #(dotimes [n 3] (add-item teams item-count))} "add 3"]
        [m/motion-group
         {:key "motion-gropu"
          :component "ul"
          :class-name "custom-transition__list"
-         :enter {:animation (:in team-animation)
-                 :stagger duration
-                 :duration duration
-                 :backwards true
-                 :display "block"
-                 :style {:display "none"}}
-         :leave {:animation (:out team-animation)
-                 :stagger duration
-                 :duration duration
-                 :backwards true
-                 }}
-        (map team (take 5 @teams))]
-       ])))
+         :enter (enter-animation duration)
+         :leave (leave-animation duration)}
+        (map team (take 5 @teams))]])))
 
+(def nav-items
+  [{:id 0
+    :title "Toggle box"}
+   {:id 1
+    :title "Square list"}
+   {:id 2
+    :title "Custom animation"}
+   {:id 3
+    :title "Custom transition"}])
+
+(defn make-nav-item [state]
+  (fn [item]
+    ))
+
+(def views
+  [{:id 0
+    :view toggle-box}
+   {:id 1
+    :view square-list}
+   {:id 2
+    :view custom-animation}
+   {:id 3
+    :view custom-transition}])
+
+(defn make-view [state]
+  (fn [view]
+    (if (= @state (:id view))
+      ^{:key (:id view)}[(:view view)])))
 
 (defn examples []
-  (let [state (r/atom 3)]
+  (let [state (r/atom 0)]
     (fn []
       [:div.main
        [:h1.title "Mozgás Examples"]
        [:ul.nav
-        [:li.nav__item {:on-click #(reset! state 0)} "Toggle box"]
-        [:li.nav__item {:on-click #(reset! state 1)} "Square list"]
-        [:li.nav__item {:on-click #(reset! state 2)} "Custom animation"]
-        [:li.nav__item {:on-click #(reset! state 3)} "Custom transition"]
-        ]
-       [:div.content
-        (condp = @state
-          0 [toggle-box]
-          1 [square-list]
-          2 [custom-animation]
-          3 [custom-transition]
-          [:span "Choose an example"])]])))
+        (doall
+         (for [item nav-items]
+           [:li {:key (:id item)
+                 :on-click #(reset! state (:id item))
+                 :class-name (if (= @state (:id item))
+                               "nav__item nav__item--active"
+                               "nav__item")} (:title item)]))]
+       [m/motion-group
+        {:component "div"
+         :class-name "content"
+         :enter {:animation "transition.slideUpIn"
+                 :delay 400
+                 :duration 300}
+         :leave {:animation "transition.slideUpOut"
+                 :duration 300}}
+        (doall
+         (for [view views]
+           (if (= @state (:id view))
+             ^{:key (:id view)}[(:view view)])))]])))
 
 (defn mount! []
   (println "-> Mozgas loaded")

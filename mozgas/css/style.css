@@ -13,16 +13,34 @@ html, body {
   width: 100%;
 }
 .title {
-  margin: 0px;
+  margin: 0 0 0 0.4rem;
+}
+button, select, input {
+  box-sizing: border-box;
+  margin: 0.1rem;
+  padding: 0.2rem 0.4rem;
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+  outline: none;
+}
+input, select {
+  width: 100%;
 }
 .nav {
   display: flex;
-  margin: 0px;
-  padding: 0px;
+  margin: 0 0.4rem;
+  padding: 0;
 }
 .nav__item {
-  padding: 0.4rem;
+  padding: 0.4rem 0.8rem 0.4rem 0;
   list-style-type: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+.nav__item--active {
+  border-bottom: 2px solid black;
 }
 .content {
   display: flex;
@@ -33,7 +51,9 @@ html, body {
 
 .toggle-box-container {
   display: flex;
+  width: 10rem;
   flex-direction: column;
+  text-align: center;
 }
 .toggle-transition {
   margin-bottom: 1rem;
@@ -42,11 +62,27 @@ html, body {
   margin-bottom: 1rem;
 }
 .toggle-box {
-  width: 100px;
-  height: 100px;
+  width: 10rem;
+  height: 10rem;
 }
 
 
+.square-list {
+  transition: all linear 1s;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+}
+.square-list .square-list__item {
+  width: 2rem;
+  height: 2rem;
+  margin: 0.2rem;
+  background-color: orange;
+}
 
 .custom-animation {
   width: 6rem;
@@ -72,7 +108,9 @@ html, body {
 }
 
 .custom-transition {
+  width: 10rem;
   height: 15rem;
+  text-align: center;
 }
 .custom-transition__list {
   display: flex;
@@ -82,7 +120,6 @@ html, body {
 .custom-transition__list .list__item {
   padding: 0.5rem;
   list-style-type: none;
-  color: white;
-  background-color: indigo;
   opacity: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
