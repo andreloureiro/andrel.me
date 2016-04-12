@@ -1,0 +1,88 @@
+html, body {
+  height: 100%;
+  margin: 0px;
+}
+#app {
+  display: flex;
+  height: 100%;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.title {
+  margin: 0px;
+}
+.nav {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+}
+.nav__item {
+  padding: 0.4rem;
+  list-style-type: none;
+}
+.content {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-box-container {
+  display: flex;
+  flex-direction: column;
+}
+.toggle-transition {
+  margin-bottom: 1rem;
+}
+.toggle-duration {
+  margin-bottom: 1rem;
+}
+.toggle-box {
+  width: 100px;
+  height: 100px;
+}
+
+
+
+.custom-animation {
+  width: 6rem;
+  height: 6rem;
+}
+.custom-animation__circle {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background: pink;
+  opacity: 0;
+}
+.custom-animation__heart {
+  width: 6rem;
+  height: 6rem;
+  background: url(../img/heart.svg) no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+  -webkit-filter: grayscale(100%);
+}
+.custom-animation__heart.custom-animation__heart--active {
+  -webkit-filter: none;
+}
+
+.custom-transition {
+  height: 15rem;
+}
+.custom-transition__list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+.custom-transition__list .list__item {
+  padding: 0.5rem;
+  list-style-type: none;
+  color: white;
+  background-color: indigo;
+  opacity: 0;
+}
