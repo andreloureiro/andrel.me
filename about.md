@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-My name is Andre Loureiro and I'm a Frontend Developer. My last experience was at [Apontador](http://apontador.com.br) where I did React.js, Angular and Node development.
+My name is Andre Loureiro and I'm a Frontend Developer living in Berlin. I work at [Zalando](https://zalando.de) where I do some UI interface development using React.js, Redux and Angular.
 
 Actually I'm studying Functional Programming and I think this is improving myself as a developer. I'm also digging into Clojure and ClojureScript.
 
