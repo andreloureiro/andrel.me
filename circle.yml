@@ -10,7 +10,7 @@ dependencies:
     - /bin/bash optimize.sh
 
 deployment:
-  staging:
+  production:
     branch: master
     commands:
-    - /bin/bash publish.sh
+    - npm run deploy
